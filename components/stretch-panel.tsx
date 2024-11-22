@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Counter } from "./counter"
 import { StretchingGIF, StretchingGIFType } from "./strething-gif"
+import { cn } from "@/utils"
 
 const stretchPlan = {
   runner1: {
@@ -46,6 +47,7 @@ const stretchPlan = {
     gif: "chest",
   },
 }
+const lastStepOfSection = ["runner4", "bend2", "twist2", "bound"]
 
 type StretchPanelProps = {
   onStateChange: (state: "notStarted" | "started" | "finished") => void
@@ -133,10 +135,17 @@ export function StretchPanel({ onStateChange }: StretchPanelProps) {
 
           <div className="w-full flex gap-2 flex-wrap pt-8">
             {Object.keys(stretchPlan).map((key) => (
-              <div key={key} className="flex flex-col items-center gap-2">
+              <div
+                key={key}
+                className={cn(
+                  "flex flex-col items-center gap-2 border-r-2 border-transparent pr-2 py-2",
+                  lastStepOfSection.includes(key) && "border-foreground"
+                )}
+              >
                 <div key={key} className="w-16 overflow-hidden rounded-full">
                   <div style={{ width: "100%", backgroundColor: "#e0e0e0" }}>
                     <div
+                      className="duration-1000"
                       style={{
                         width: `${progress[key]}%`,
                         height: "10px",
@@ -157,7 +166,13 @@ export function StretchPanel({ onStateChange }: StretchPanelProps) {
               Congratulations! You&apos;ve completed the stretch plan.
             </div>
           )}
-          <h3 className="text-4xl text-gray-100 font-bold">
+          <div className="relative">
+            <h1 className="text-9xl font-black">Stretch</h1>
+            <span className="text-3xl absolute z-40 -bottom-3 right-0 opacity-50 font-bold text-shadow">
+              .app
+            </span>
+          </div>
+          <h3 className="text-4xl text-gray-100 font-bold italic">
             Ready for your 5 minute stretching session?
           </h3>
           <button

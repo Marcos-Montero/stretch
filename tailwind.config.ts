@@ -31,9 +31,27 @@ export default {
             transform: "rotate(270deg)",
           },
         },
+        scrollRight: {
+          "0%": { transform: "translate(0, 0)", opacity: "1" },
+          "50%": { transform: "translate(100px, 50px)", opacity: "0" },
+          "100%": { transform: "translate(0, 0)", opacity: "1" },
+        },
+        scrollLeft: {
+          "0%": { transform: "translate(0, 0)", opacity: "1" },
+          "50%": { transform: "translate(-100px, 50px)", opacity: "0" },
+          "100%": { transform: "translate(0, 0)", opacity: "1" },
+        },
+        scrollRightFast: {
+          "0%": { transform: "translate(0, 0)", opacity: "1" },
+          "50%": { transform: "translate(100px, 50px)", opacity: "0" },
+          "100%": { transform: "translate(0, 0)", opacity: "1" },
+        },
       },
       animation: {
         complexGlow: "complexGlow 8s infinite alternate",
+        scrollRight: "scrollRight 15s infinite",
+        scrollLeft: "scrollLeft 20s infinite",
+        scrollRightFast: "scrollRightFast 10s infinite",
       },
     },
   },

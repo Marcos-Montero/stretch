@@ -17,7 +17,7 @@ export type StretchingGIFType = keyof typeof stretchingGIF
 export const StretchingGIF = ({ type }: { type: StretchingGIFType }) => {
   const size = 360
   return (
-    <div className="relative flex justify-center items-center">
+    <div className="relative flex justify-center items-center mb-4">
       <div
         className={cn(
           "absolute rounded-full overflow-hidden opacity-25",

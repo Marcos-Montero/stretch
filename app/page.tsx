@@ -1,41 +1,12 @@
-"use client"
 import Link from "next/link"
-import { StretchPanel } from "../components/stretch-panel"
 import { FaGithub } from "react-icons/fa"
-import ParticlesBg, { TypeProp } from "particles-bg"
-import { useState } from "react"
-
-const animations: Record<string, TypeProp> = {
-  notStarted: "cobweb",
-  started: "lines",
-  finished: "polygon",
-}
-type AnimationType = keyof typeof animations
-
+import { StretchSession } from "../components/stretch-session"
+import { Bg } from "../components/bg"
 export default function Home() {
-  const [animationType, setAnimationType] =
-    useState<AnimationType>("notStarted")
-
-  const handleStateChange = (state: "notStarted" | "started" | "finished") => {
-    switch (state) {
-      case "notStarted":
-        setAnimationType("notStarted")
-        break
-      case "started":
-        setAnimationType("started")
-        break
-      case "finished":
-        setAnimationType("finished")
-        break
-    }
-  }
-
   return (
-    <div className="p-8">
-      <ParticlesBg type={animations[animationType] as TypeProp} bg={true} />
-      <main className="flex flex-col gap-8 items-center py-8 relative min-h-[90vh] justify-center text-foreground ">
-        <StretchPanel onStateChange={handleStateChange} />
-      </main>
+    <div className="w-screen h-screen relative">
+      <Bg />
+      <StretchSession />
       <footer className="text-xs flex gap-6 flex-wrap items-center justify-center">
         <Link
           href="https://github.com/Marcos-Montero"
