@@ -15,27 +15,26 @@ const stretchingGIF = {
 export type StretchingGIFType = keyof typeof stretchingGIF
 
 export const StretchingGIF = ({ type }: { type: StretchingGIFType }) => {
-  const size = 360
+  const size = 240
   return (
     <div className="relative flex justify-center items-center mb-4">
       <div
         className={cn(
           "absolute rounded-full overflow-hidden opacity-25",
           "animate-complexGlow",
-          "w-[420px] h-[380px]"
+          "w-[240px] h-[200px] md:w-[320px] md:h-[280px] lg:w-[420px] lg:h-[380px]"
         )}
       />
       <div
         className={cn(
           "absolute rounded-full overflow-hidden opacity-25",
           "animate-complexGlowAlt",
-          "w-[380px] h-[420px]"
+          "w-[200px] h-[240px] md:w-[280px] md:h-[320px] lg:w-[380px] lg:h-[420px]"
         )}
       />
       <div
         className={cn(
-          "relative flex justify-center items-center rounded-full overflow-hidden",
-          `w-[${size}px] h-[${size}px]`
+          "relative flex justify-center items-center rounded-full overflow-hidden w-[200px] h-[200px] md:w-[280px] md:h-[280px] lg:w-[360px] lg:h-[360px]"
         )}
       >
         <Image
@@ -44,6 +43,7 @@ export const StretchingGIF = ({ type }: { type: StretchingGIFType }) => {
           width={size}
           height={size}
           unoptimized
+          className="w-[200px] h-[200px] md:w-[280px] md:h-[280px] lg:w-[360px] lg:h-[360px]"
         />
       </div>
     </div>

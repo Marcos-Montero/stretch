@@ -31,7 +31,7 @@ export function StretchSession() {
   } */
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       {/*       <ParticlesBg type={animations[animationType] as TypeProp} bg={true} />
        */}{" "}
       <main className="flex flex-col gap-8 items-center relative min-h-[90vh] justify-center text-foreground">

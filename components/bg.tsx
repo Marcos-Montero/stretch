@@ -1,6 +1,6 @@
 export const Bg = () => {
   return (
-    <div className="absolute size-[120vw] bottom-[calc(-30vh)] opacity-50">
+    <div className="absolute size-[120vw] bottom-[calc(-20vh)] md:bottom-[calc(-30vh)] lg:bottom-[calc(-50vh)] opacity-50">
       <svg
         className="w-full h-full"
         viewBox="0 0 725 523"

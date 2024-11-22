@@ -4,7 +4,7 @@ import { StretchSession } from "../components/stretch-session"
 import { Bg } from "../components/bg"
 export default function Home() {
   return (
-    <div className="w-screen h-screen relative">
+    <div className="w-screen h-screen relative overflow-hidden">
       <Bg />
       <StretchSession />
       <footer className="text-xs flex gap-6 flex-wrap items-center justify-center">

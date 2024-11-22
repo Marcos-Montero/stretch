@@ -107,7 +107,7 @@ export function StretchPanel({ onStateChange }: StretchPanelProps) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6">
+    <div className="flex flex-col items-center justify-center gap-1 md:gap-6">
       {active ? (
         <>
           <StretchingGIF
@@ -133,7 +133,7 @@ export function StretchPanel({ onStateChange }: StretchPanelProps) {
             </div>
           </div>
 
-          <div className="w-full flex gap-2 flex-wrap pt-8">
+          <div className="w-full flex gap-2 flex-wrap pt-8 justify-center">
             {Object.keys(stretchPlan).map((key) => (
               <div
                 key={key}
@@ -167,12 +167,12 @@ export function StretchPanel({ onStateChange }: StretchPanelProps) {
             </div>
           )}
           <div className="relative">
-            <h1 className="text-9xl font-black">Stretch</h1>
-            <span className="text-3xl absolute z-40 -bottom-3 right-0 opacity-50 font-bold text-shadow">
+            <h1 className="text-6xl md:text-9xl font-black">Stretch</h1>
+            <span className="text-2xl md:text-3xl absolute z-40 -bottom-3 right-0 opacity-50 font-bold text-shadow">
               .app
             </span>
           </div>
-          <h3 className="text-4xl text-gray-100 font-bold italic">
+          <h3 className="text-xl md:text-4xl text-gray-100 font-bold italic text-center">
             Ready for your 5 minute stretching session?
           </h3>
           <button
